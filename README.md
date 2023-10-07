@@ -25,6 +25,14 @@ This repo will be used to learn kubernetes hands on using kind containers to app
 
 ## Create kind cluster 
 - create kind config
+`kind create cluster --image=kindest/node:v1.21.12 --name k8s-playground --config ./kind_config.yaml`
+
+- connect docker registry to kind network
+`docker network connect kind local-registry`
+
+- connect registry to kind 
+`kubectl apply -f ./kind_configmap.yaml`
+
 
 
 

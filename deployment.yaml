@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dockerized-react-app
+  name: dockerized-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dockerized-react-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: dockerized-react-app
+    spec:
+      containers:
+      - image: docker.io/nlarafonse/playground
+        name: dockerized-react-app
+        resources: {}
+status: {}
